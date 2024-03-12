@@ -1,0 +1,131 @@
+<svg
+   version="1.1"
+   id="svg4014"
+   xml:space="preserve"
+   viewBox="0 0 682.66669 682.66669"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnsSvg="http://www.w3.org/2000/svg">
+	<defs
+     id="defs4018">
+		<clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4028">
+			<path
+         d="M 0,512 H 512 V 0 H 0 Z"
+         id="path4026" />
+		</clipPath>
+		<clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4048">
+			<path
+         d="M 0,512 H 512 V 0 H 0 Z"
+         id="path4046" />
+		</clipPath>
+	</defs>
+	<g
+     id="g4020"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,682.66667)">
+		<g
+       id="g4022">
+			<g
+         id="g4024"
+         clip-path="url(#clipPath4028)">
+				<g
+           id="g4030"
+           transform="translate(497,301)">
+					<path
+             d="M 0,0 -100,100 V -40 H 0 Z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4032" />
+				</g>
+				<g
+           id="g4034"
+           transform="translate(437,131)">
+					<path
+             d="M 0,0 H 60 V 170 L -39.995,270 H -100 V 130 H -422 V 0 h 60"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4036" />
+				</g>
+			</g>
+		</g>
+		<g
+       id="g4038"
+       transform="translate(195,131)">
+			<path
+         d="M 0,0 H 122"
+         style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         id="path4040" />
+		</g>
+		<g
+       id="g4042">
+			<g
+         id="g4044"
+         >
+				<g
+           id="g4050"
+           transform="translate(195,131)">
+					<path
+             d="m 0,0 c 0,-33.137 -26.863,-60 -60,-60 -33.137,0 -60,26.863 -60,60 0,33.137 26.863,60 60,60 C -26.863,60 0,33.137 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4052" />
+				</g>
+				<g
+           id="g4054"
+           transform="translate(150,131)">
+					<path
+             d="m 0,0 c 0,-8.284 -6.716,-15 -15,-15 -8.284,0 -15,6.716 -15,15 0,8.284 6.716,15 15,15 C -6.716,15 0,8.284 0,0"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path4056" />
+				</g>
+				<g
+           id="g4058"
+           transform="translate(317,131)">
+					<path
+             d="m 0,0 c 0,-33.137 26.863,-60 60,-60 33.137,0 60,26.863 60,60 C 120,33.137 93.137,60 60,60 26.863,60 0,33.137 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4060" />
+				</g>
+				<g
+           id="g4062"
+           transform="translate(362,131)">
+					<path
+             d="m 0,0 c 0,-8.284 6.716,-15 15,-15 8.284,0 15,6.716 15,15 C 30,8.284 23.284,15 15,15 6.716,15 0,8.284 0,0"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path4064" />
+				</g>
+				<g
+           id="g4066"
+           transform="translate(257,401)">
+					<path
+             d="m 0,0 c 0,-22.092 -17.909,-40 -40,-40 -22.091,0 -40,17.908 -40,40 0,22.092 17.909,40 40,40 C -17.909,40 0,22.092 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4068" />
+				</g>
+				<g
+           id="g4070"
+           transform="translate(277,261)">
+					<path
+             d="m 0,0 h -120 v 40 c 0,33.137 26.863,60 60,60 33.137,0 60,-26.863 60,-60 z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4072" />
+				</g>
+				<g
+           id="g4074"
+           transform="translate(137,401)">
+					<path
+             d="m 0,0 c 0,-22.092 -17.909,-40 -40,-40 -22.091,0 -40,17.908 -40,40 0,22.092 17.909,40 40,40 C -17.909,40 0,22.092 0,0 Z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4076" />
+				</g>
+				<g
+           id="g4078"
+           transform="translate(157,261)">
+					<path
+             d="m 0,0 h -120 v 40 c 0,33.137 26.863,60 60,60 33.137,0 60,-26.863 60,-60 z"
+             style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path4080" />
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

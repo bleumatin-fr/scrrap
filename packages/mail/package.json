@@ -1,0 +1,13 @@
+{
+  "name": "mail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "maildev --ip localhost"
+  },
+  "dependencies": {
+    "maildev": "^2.0.5"
+  }
+}

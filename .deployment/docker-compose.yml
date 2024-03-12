@@ -1,0 +1,55 @@
+services:
+  scrrap:
+    image: ghcr.io/bleumatin-fr/scrrap:latest
+    volumes:
+      - spreadsheets:/app/spreadsheets
+    environment:
+      - PORT=3000
+      - MONGO_URL=mongodb://[USER]:[PASSWORD]@mongo:27017/admin
+      - PASSWORD_SALT_ROUND=10
+      - JWT_SECRET=[SECRET]
+      - JWT_EXPIRY=60 * 24
+      - REFRESH_TOKEN_SECRET=[SECRET]
+      - REFRESH_TOKEN_EXPIRY=60 * 60 * 24 * 30
+      - COOKIE_SECRET=[SECRET]
+      - RESET_PASSWORD_TOKEN_SECRET=[SECRET]
+      - RESET_PASSWORD_TOKEN_EXPIRY=60 * 60 * 24 * 30
+      - INVITATION_TOKEN_EXPIRY=60 * 60 * 24 * 7
+      - DOCBUILDER_SPREADSHEET_FOLDER=/app/spreadsheets
+      - MAIL_HOST=
+      - MAIL_PORT=1025
+      - MAIL_AUTH_USERNAME=
+      - MAIL_AUTH_PASSWORD=
+      - MAIL_FROM=no-reply@scrrap.org
+      - MAIL_TO=simulateur@scrrap.org
+      - WHITELISTED_DOMAINS=https://chuto.talm.fr/scrrap
+      - DOCUMENTSERVER_API_URL=http://scrrap:3000/admin/api
+      - FRONTEND_URL=https://chuto.talm.fr/scrrap
+      - FRONT_API_URL=https://chuto.talm.fr/scrrap/api
+      - FRONT_FRONT_URL=https://chuto.talm.fr/scrrap
+      - ADMIN_AUTH_API_URL=https://chuto.talm.fr/scrrap/api/authentication
+      - ADMIN_API_URL=https://chuto.talm.fr/scrrap/admin/api
+      - ADMIN_FRONT_URL=https://chuto.talm.fr/scrrap
+      - ADMIN_DOCUMENTSERVER_URL=https://chuto.talm.fr/scrrap/docs
+    links:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    command: mongod --storageEngine=wiredTiger
+    volumes:
+      - chutocalculator-mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=[USER]
+      - MONGO_INITDB_ROOT_PASSWORD=[PASSWORD]
+
+  documentserver:
+    image: onlyoffice/documentserver
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=[SECRET]
+      - GENERATE_FONTS=true
+
+volumes:
+  spreadsheets:
+  mongo:

@@ -1,0 +1,64 @@
+{
+  "name": "@scrrap/server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only --ignore-watch packages/core src/app.ts",
+    "start:production": "ts-node dist/src/app.js",
+    "build": "rm -Rf dist && tsc -p .",
+    "postbuild": "cp -r migrations dist && cp package.dist.json dist/package.json",
+    "migration:create": "migrate-mongo create new-migration",
+    "migration:up": "dotenv-run-script .env .env.local -- migration:_up",
+    "migration:_up": "migrate-mongo up",
+    "migration:status": "dotenv-run-script .env .env.local -- migration:_status",
+    "migration:_status": "migrate-mongo status"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
+  "devDependencies": {
+    "@scrrap/core": "*",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv-flow": "^3.2.0",
+    "@types/excel-column-name": "^1.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^9.0.4",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.0.0",
+    "@types/nodemailer": "^6.4.7",
+    "dotenv-run-script": "^0.2.0",
+    "nodemon": "^2.0.18",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@sentry/node": "^7.18.0",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^3.2.0",
+    "excel-column-name": "^1.0.1",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "express-csp-header": "^5.2.1",
+    "express-oauth2-jwt-bearer": "^1.6.0",
+    "express-query-boolean": "^2.0.0",
+    "jsonwebtoken": "9.0.2",
+    "migrate-mongo": "^9.0.0",
+    "mongoose": "^6.4.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.8.0",
+    "scmp": "^2.1.0",
+    "string-replace-middleware": "^1.0.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}

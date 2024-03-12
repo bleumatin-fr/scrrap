@@ -1,0 +1,13 @@
+services:
+  documentserver:
+    image: onlyoffice/documentserver
+    ports:
+      - 4003:80
+    volumes:
+      - ./.docker/logs:/var/log/onlyoffice
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=MY_JWT_SECRET
+      - GENERATE_FONTS=true
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'

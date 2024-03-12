@@ -1,0 +1,80 @@
+{
+  "name": "@scrrap/client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^2.16.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.101",
+    "@mui/material": "^5.8.7",
+    "@nivo/core": "^0.80.0",
+    "@nivo/treemap": "^0.80.0",
+    "@reactour/tour": "^3.1.8",
+    "@sentry/react": "^7.18.0",
+    "@sentry/tracing": "^7.18.0",
+    "@scrrap/core": "*",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/helmet": "^4.0.0",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.21",
+    "notistack": "^3.0.1",
+    "react": "^18.2.0",
+    "react-archer": "^4.0.1",
+    "react-cookie-consent": "^8.0.1",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^3.1.4",
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^8.0.3",
+    "react-password-strength-bar": "^0.4.1",
+    "react-query": "^3.39.1",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.1",
+    "react-simple-arrows": "^0.2.0",
+    "recharts": "^2.1.14",
+    "typescript": "^4.7.4",
+    "usehooks-ts": "^2.7.1",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "sh -ac '. ./.env.${NODE_ENV:-development}; react-scripts build'",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/autosuggest-highlight": "^3.2.0",
+    "@types/google.maps": "^3.50.4",
+    "@types/jest": "^27.5.2",
+    "@types/lodash": "^4.14.182",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-helmet": "^6.1.5",
+    "@types/recharts": "^1.8.23",
+    "@types/uuid": "^8.3.4"
+  }
+}

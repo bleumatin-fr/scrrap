@@ -1,0 +1,15 @@
+{
+  "name": "documentserver",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "cp -n .env .env.local > /dev/null 2>&1 || true",
+    "start": "docker-compose down && docker-compose up --build --force-recreate --renew-anon-volumes || true",
+    "stop": "docker-compose down || true"
+  },
+  "dependencies": {
+    "@delucis/if-env": "^1.1.2",
+    "dotenv-run-script": "^0.2.0"
+  }
+}

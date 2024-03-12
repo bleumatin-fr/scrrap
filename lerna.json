@@ -1,0 +1,12 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "version": "independent",
+  "command": {
+    "version": {
+      "message": "chore: Release"
+    }
+  }
+}
