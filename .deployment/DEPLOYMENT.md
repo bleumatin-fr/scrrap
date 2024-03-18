@@ -44,6 +44,18 @@ Address of the API root from the point of view of the browser of the user
 
 ex : `https://chuto.talm.fr/scrrap/api`
 
+##### FRONT_BASENAME
+
+If scrrap is server on a subpath, set this variable to the subpath.
+
+ex: `/scrrap`
+
+##### FRONT_PUBLIC_URL
+
+If admin is server on a subpath, set this variable to the subpath.
+
+ex: `/scrrap`
+
 #### Admin
 
 ##### ADMIN_AUTH_API_URL
@@ -69,6 +81,18 @@ ex : `https://chuto.talm.fr/scrrap/admin/api`
 Address of the documentserver from the point of view of the browser of the user
 
 ex : `https://chuto.talm.fr/scrrap/docs`
+
+##### ADMIN_BASENAME
+
+If admin is server on a subpath, set this variable to the subpath.
+
+ex: `/scrrap/admin`
+
+##### ADMIN_PUBLIC_URL
+
+If admin is server on a subpath, set this variable to the subpath.
+
+ex: `/scrrap/admin`
 
 #### API
 

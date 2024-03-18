@@ -1,6 +1,7 @@
 services:
   scrrap:
-    image: ghcr.io/bleumatin-fr/scrrap:latest
+    ports:
+      - 3000:3000
     volumes:
       - spreadsheets:/app/spreadsheets
     environment:
@@ -27,10 +28,14 @@ services:
       - FRONTEND_URL=https://chuto.talm.fr/scrrap
       - FRONT_API_URL=https://chuto.talm.fr/scrrap/api
       - FRONT_FRONT_URL=https://chuto.talm.fr/scrrap
+      - FRONT_BASENAME=/scrrap
+      - FRONT_PUBLIC_URL=/scrrap
       - ADMIN_AUTH_API_URL=https://chuto.talm.fr/scrrap/api/authentication
       - ADMIN_API_URL=https://chuto.talm.fr/scrrap/admin/api
-      - ADMIN_FRONT_URL=https://chuto.talm.fr/scrrap
+      - ADMIN_FRONT_URL=https://chuto.talm.fr/scrrap/admin
       - ADMIN_DOCUMENTSERVER_URL=https://chuto.talm.fr/scrrap/docs
+      - ADMIN_BASENAME=/scrrap/admin
+      - ADMIN_PUBLIC_URL=/scrrap/admin
     links:
       - mongo
 
@@ -38,7 +43,7 @@ services:
     image: mongo:latest
     command: mongod --storageEngine=wiredTiger
     volumes:
-      - chutocalculator-mongo:/data/db
+      - mongo:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=[USER]
       - MONGO_INITDB_ROOT_PASSWORD=[PASSWORD]
