@@ -110,6 +110,7 @@ app.use(
 
 app.use(
   '/',
+  injectConfig('FRONT_PUBLIC_URL', 'PUBLIC_URL'),
   injectConfig('FRONT_', 'REACT_APP_'),
   express.static(
     process.env.CLIENT_PATH || path.join(__dirname, '../../client/build'),
@@ -118,6 +119,7 @@ app.use(
 );
 app.use(
   '/admin',
+  injectConfig('ADMIN_PUBLIC_URL', 'PUBLIC_URL'),
   injectConfig('ADMIN_', 'REACT_APP_'),
   express.static(
     process.env.ADMIN_PATH || path.join(__dirname, '../../admin/build'),
@@ -164,17 +166,28 @@ app.use(
   spreadSheetsAdminRoutes,
 );
 
-app.get('/admin/*', (req, response) => {
-  response.sendFile('index.html', {
-    root: process.env.ADMIN_PATH || path.join(__dirname, '../../admin/build'),
-  });
-});
+app.get(
+  '/admin/*',
+  injectConfig('ADMIN_PUBLIC_URL', 'PUBLIC_URL', false),
+  injectConfig('ADMIN_', 'REACT_APP_', false),
+  (req, response) => {
+    response.sendFile('index.html', {
+      root: process.env.ADMIN_PATH || path.join(__dirname, '../../admin/build'),
+    });
+  },
+);
 
-app.get('/*', (req, response) => {
-  response.sendFile('index.html', {
-    root: process.env.CLIENT_PATH || path.join(__dirname, '../../client/build'),
-  });
-});
+app.get(
+  '/*',
+  injectConfig('FRONT_PUBLIC_URL', 'PUBLIC_URL', false),
+  injectConfig('FRONT_', 'REACT_APP_', false),
+  (req, response) => {
+    response.sendFile('index.html', {
+      root:
+        process.env.CLIENT_PATH || path.join(__dirname, '../../client/build'),
+    });
+  },
+);
 
 app.use(errorHandler);
 app.use(Sentry.Handlers.errorHandler());

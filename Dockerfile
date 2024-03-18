@@ -5,8 +5,8 @@ ENV NODE_ENV=development
 RUN apt-get update
 RUN apt-get install -y gcc make build-essential
 
-ADD . /tmp/talm
-WORKDIR /tmp/talm
+ADD . /app
+WORKDIR /app
 RUN yarn clean
 RUN yarn global add node-gyp
 RUN yarn install --frozen-lockfile
@@ -18,13 +18,13 @@ RUN apk upgrade libssl3 libcrypto3
 
 WORKDIR /app
 
-COPY --from=build /tmp/talm/packages/server/dist /app
+COPY --from=build /app/packages/server/dist /app
 
-COPY --from=build /tmp/talm/packages/admin/build /app/admin
-COPY --from=build /tmp/talm/packages/client/build /app/client
+COPY --from=build /app/packages/admin/build /app/admin
+COPY --from=build /app/packages/client/build /app/client
 RUN yarn install --production --frozen-lockfile
 
-COPY --from=build /tmp/talm/packages/core/dist /app/node_modules/@scrrap/core
+COPY --from=build /app/packages/core/dist /app/node_modules/@scrrap/core
 
 ENV ADMIN_PATH=/app/admin
 ENV CLIENT_PATH=/app/client
