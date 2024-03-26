@@ -24,7 +24,13 @@ export default (
       ['js', 'css', 'html'].some((ext) => req.path.endsWith(ext)) ||
       !checkFileExtensions;
 
-    if (req.path.includes('spreadsheet') || !isReplaceableFileExtension) {
+    const isRoot =
+      req.path === process.env.FRONT_PUBLIC_URL + '/' ||
+      req.path === process.env.ADMIN_PUBLIC_URL + '/';
+    if (
+      req.path.includes('spreadsheet') ||
+      (!isRoot && !isReplaceableFileExtension)
+    ) {
       next();
       return;
     }

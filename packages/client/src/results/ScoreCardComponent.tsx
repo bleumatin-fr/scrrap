@@ -1,5 +1,5 @@
-import { ScoreCard } from '@scrrap/core';
 import styled from '@emotion/styled';
+import { ScoreCard } from '@scrrap/core';
 
 import { IconContainer, scopeIcons } from './ResultsSimple';
 
@@ -32,7 +32,7 @@ const ScoreCardComponentContainer = styled.div`
 
 const ScoreCardComponent = ({ result }: ScoreCardProps) => {
   const icon = scopeIcons[result.code!] ?? (
-    <img src="/action.png" alt="action" />
+    <img src={`${process.env.REACT_APP_BASENAME}/action.png`} alt="action" />
   );
   const scores = result.score!.split('/');
   return (

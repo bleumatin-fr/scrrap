@@ -64,8 +64,8 @@ const Home = () => {
     <Container>
       <Block>
         <div>
-          <img alt="Logo" src="/logo-talm.png" />
-          <img alt="Logo" src="/logo-pk.png" />
+          <img alt="Logo" src={`${process.env.REACT_APP_BASENAME}/logo-talm.png`} />
+          <img alt="Logo" src={`${process.env.REACT_APP_BASENAME}/logo-pk.png`} />
         </div>
         <div>
           <MessageContainer

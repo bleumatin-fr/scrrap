@@ -73,11 +73,11 @@ export const HeaderProjects = () => {
         >
           {/* <p className="h6r">CHUTO-CALCULATOR</p> */}
           <LogoWrapper
-            src="/logo-talm.png"
+            src={`${process.env.REACT_APP_BASENAME}/logo-talm.png`}
             alt="logo talm"
           />
           <LogoWrapper
-            src="/logo-pk.png"
+            src={`${process.env.REACT_APP_BASENAME}/logo-pk.png`}
             alt="logo pk"
           />
         </div>

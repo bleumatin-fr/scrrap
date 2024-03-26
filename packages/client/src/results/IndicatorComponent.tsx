@@ -1,9 +1,9 @@
-import { Indicator } from '@scrrap/core';
 import styled from '@emotion/styled';
+import { Indicator } from '@scrrap/core';
 
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 import { IconContainer, scopeIcons } from './ResultsSimple';
 
@@ -31,30 +31,30 @@ interface IndicatorProps {
 
 const IndicatorComponent = ({ result }: IndicatorProps) => {
   const icon = scopeIcons[result.code!] ?? (
-    <img src="/action.png" alt="action" />
+    <img src={`${process.env.REACT_APP_BASENAME}/action.png`} alt="action" />
   );
   return (
     <IndicatorComponentContainer>
-    <IconContainer>{icon}</IconContainer>
-    <TitleScoreContainer>
-      <p>
-        {result.title}
-        {result.description && (
-          <Tooltip title={result.description}>
-            <IconButton size="small">
-              <InfoIcon fontSize="inherit" />
-            </IconButton>
-          </Tooltip>
-        )}
-      </p>
-    </TitleScoreContainer>
-    <IndicatorWrapper>
-      <p className="h3r">
-        <b>{result.number || 0}</b>{' '}
-        <span className="hzr">{result.unit || ''}</span>
-      </p>
-    </IndicatorWrapper>
-  </IndicatorComponentContainer>
+      <IconContainer>{icon}</IconContainer>
+      <TitleScoreContainer>
+        <p>
+          {result.title}
+          {result.description && (
+            <Tooltip title={result.description}>
+              <IconButton size="small">
+                <InfoIcon fontSize="inherit" />
+              </IconButton>
+            </Tooltip>
+          )}
+        </p>
+      </TitleScoreContainer>
+      <IndicatorWrapper>
+        <p className="h3r">
+          <b>{result.number || 0}</b>{' '}
+          <span className="hzr">{result.unit || ''}</span>
+        </p>
+      </IndicatorWrapper>
+    </IndicatorComponentContainer>
   );
 };
 

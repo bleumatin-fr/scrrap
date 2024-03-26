@@ -8,8 +8,7 @@ export const synthesisIllustrations = [
     tCO2eq: 0.0000569,
     mainText: 'washing machine cycles',
     secondary: '',
-    source:
-      "ADEME (France)",
+    source: 'ADEME (France)',
   },
   {
     image: '/equivalence/paris-ny.svg',
@@ -25,7 +24,7 @@ export const synthesisIllustrations = [
     tCO2eq: 0.027,
     mainText: 'days of a french person',
     secondary: '',
-    source: "Carbone 4",
+    source: 'Carbone 4',
   },
   {
     image: '/equivalence/beaf.svg',
@@ -33,7 +32,7 @@ export const synthesisIllustrations = [
     tCO2eq: 0.0068,
     mainText: '200g beaf steacks',
     secondary: '',
-    source: "ADEME (France)",
+    source: 'ADEME (France)',
   },
   {
     image: '/equivalence/appartment.svg',
@@ -41,7 +40,7 @@ export const synthesisIllustrations = [
     tCO2eq: 0.1166,
     mainText: 'months of a 30m² appartment',
     secondary: '(in France)',
-    source: "ADEME (France)",
+    source: 'ADEME (France)',
   },
   {
     image: '/equivalence/house.svg',
@@ -49,7 +48,7 @@ export const synthesisIllustrations = [
     tCO2eq: 3.5,
     mainText: 'years of a 100m² house',
     secondary: '(in France)',
-    source: "ADEME (France)",
+    source: 'ADEME (France)',
   },
   {
     image: '/equivalence/food.svg',
@@ -57,7 +56,7 @@ export const synthesisIllustrations = [
     tCO2eq: 0.136,
     mainText: 'months of a classical diet',
     secondary: '',
-    source: "ADEME (France)",
+    source: 'ADEME (France)',
   },
 ];
 
@@ -72,14 +71,17 @@ interface IllustrationType {
 
 const getRandomIndexOfArray = (arrayLength: number) => {
   if (arrayLength === 0) return null;
-  return Math.floor(Math.random() * arrayLength)
-}
+  return Math.floor(Math.random() * arrayLength);
+};
 
 export const getIllustration = (indicator: Indicator) => {
   if (!indicator || !indicator.number) return null;
   const number = parseFloat(indicator.number);
-  const interestingIllustrations = synthesisIllustrations.filter((illu) => number / 1000 > 3 * illu.tCO2eq  && number / 1000 < 1000 * illu.tCO2eq)
-  const index = getRandomIndexOfArray(interestingIllustrations.length)
+  const interestingIllustrations = synthesisIllustrations.filter(
+    (illu) =>
+      number / 1000 > 3 * illu.tCO2eq && number / 1000 < 1000 * illu.tCO2eq,
+  );
+  const index = getRandomIndexOfArray(interestingIllustrations.length);
   return index ? interestingIllustrations[index] : interestingIllustrations[0];
 };
 
@@ -112,13 +114,16 @@ const Illustration = ({
 }) => {
   if (!indicator.number) return null;
   const number = Math.round(
-    (parseFloat(indicator.number) / 1000) / illustration.tCO2eq,
+    parseFloat(indicator.number) / 1000 / illustration.tCO2eq,
   );
   return (
     <Container>
       <p className="h2b">Equivalence</p>
       <Content>
-        <img src={illustration.image} alt="illustration" />
+        <img
+          src={`${process.env.REACT_APP_BASENAME}/${illustration.image}`}
+          alt="illustration"
+        />
         <div>
           <p className="h1b">{number}</p>
           <p className="h2r">{illustration.mainText}</p>
