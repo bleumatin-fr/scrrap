@@ -36,6 +36,8 @@ services:
       - ADMIN_DOCUMENTSERVER_URL=https://chuto.talm.fr/scrrap/docs
       - ADMIN_BASENAME=/scrrap/admin
       - ADMIN_PUBLIC_URL=/scrrap/admin
+      - PROXY_DOCUMENT_SERVER_URL=http://documentserver
+      - PROXY_HOSTNAME=chutotheque.esad-talm.fr
     links:
       - mongo
 

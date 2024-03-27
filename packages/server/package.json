@@ -52,6 +52,7 @@
     "express-csp-header": "^5.2.1",
     "express-oauth2-jwt-bearer": "^1.6.0",
     "express-query-boolean": "^2.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "jsonwebtoken": "9.0.2",
     "migrate-mongo": "^9.0.0",
     "mongoose": "^6.4.2",

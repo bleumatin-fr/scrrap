@@ -37,6 +37,7 @@ import connect, { up } from './db';
 import injectConfig from './injectConfig';
 import seedModels from './models/seed';
 import seedUsers from './users/seed';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 connect().then(async ({ connection }) => {
   try {
@@ -71,6 +72,26 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 app.use(Sentry.Handlers.requestHandler());
+
+if (process.env.PROXY_DOCUMENT_SERVER_URL) {
+  if (!process.env.PROXY_HOSTNAME) {
+    throw new Error('PROXY_HOSTNAME env variable is required');
+  }
+  app.use(
+    '/docs',
+    createProxyMiddleware('/docs', {
+      target: process.env.PROXY_DOCUMENT_SERVER_URL,
+      ws: true,
+      pathRewrite: (path, req) => {
+        return path.replace('/docs', '');
+      },
+      headers: {
+        'X-Forwarded-Host': `${process.env.PROXY_HOSTNAME}/docs`,
+        'X-Forwarded-Proto': 'https',
+      },
+    }),
+  );
+}
 
 const whitelist = process.env.WHITELISTED_DOMAINS
   ? process.env.WHITELISTED_DOMAINS.split(',')
