@@ -10,15 +10,25 @@ if (process.env.MAIL_AUTH_USERNAME) {
   };
 }
 
-if (process.env.MAIL_TLS_REJECT_UNAUTHORIZED === 'false') {
-  extra.tls = {
-    ciphers: 'SSLv3',
-    rejectUnauthorized: false,
-  };
+if (process.env.MAIL_SECURE) {
+  extra.secure = process.env.MAIL_SECURE === 'true';
 }
 
-if (process.env.MAIL_SECURE === 'false') {
-  extra.secure = false;
+if (process.env.MAIL_TLS_CIPHERS || process.env.MAIL_TLS_REJECT_UNAUTHORIZED) {
+  extra.tls = {};
+
+  if (process.env.MAIL_TLS_CIPHERS) {
+    extra.tls.ciphers = process.env.MAIL_TLS_CIPHERS;
+  }
+
+  if (process.env.MAIL_TLS_REJECT_UNAUTHORIZED) {
+    extra.tls.rejectUnauthorized =
+      process.env.MAIL_TLS_REJECT_UNAUTHORIZED === 'true';
+  }
+}
+
+if (process.env.MAIL_SECURE) {
+  extra.secure = process.env.MAIL_SECURE === 'true';
 }
 
 const transporter = nodemailer.createTransport({
