@@ -22,6 +22,10 @@ import Button from '../ui/Button';
 import { ReactComponent as Co2Icon } from '../ui/icons/categories/co2.svg';
 import { ReactComponent as SecondHand } from '../ui/icons/doccasion.svg';
 import { ReactComponent as Cycle } from '../ui/icons/recycler.svg';
+import { ReactComponent as TransportGoods } from '../ui/icons/categories/transport-good.svg';
+import { ReactComponent as Waste } from '../ui/icons/categories/waste.svg';
+import { ReactComponent as StakeHolders } from '../ui/icons/categories/stakeholders.svg';
+import { ReactComponent as MachineUse } from '../ui/icons/categories/machine-use.svg';
 
 const Block = styled(BaseBlock)`
   background-color: var(--results-bg);
@@ -182,8 +186,18 @@ export const IconContainer = styled.div`
 export const scopeIcons: { [key: string]: ReactElement } = {
   co2: <Co2Icon />,
   'co2 évité': <Co2Icon />,
+  'co2 total': <Co2Icon />,
   circularité: <SecondHand />,
   'réemploi total': <Cycle />,
+  'approvisionnement': <TransportGoods />,
+  'déchets évités total': <Waste />,
+  'chutes réemployées total': <Cycle />,
+  'partenariats': <StakeHolders />,
+  'flux': <></>,
+  'personnes sensibilisées': <></>,
+  'consommation énergie machines':<MachineUse/>,
+  'impact utilisation machines': <></>,
+  'maintenance machines': <MachineUse/>,
 };
 
 const ResultSection = ({

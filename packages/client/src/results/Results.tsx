@@ -22,6 +22,7 @@ import ResultGraph from './ResultGraph';
 import ResultsSynthesis from './ResultsSynthesis';
 import SectionTitle, { SectionSubtitle } from './SectionTitle';
 import TreemapComponent from './TreemapComponent';
+import IndicatorComponent from './IndicatorComponent';
 
 export const ResultsContainer = styled.div`
   width: 100%;
@@ -131,6 +132,10 @@ export const ResultDispatch = ({
         >
           <p className="hxr">{result.text}</p>
         </GlobalScoreComponent>
+      );
+    case 'indicator':
+      return (
+        <IndicatorComponent result={result} />
       );
     case 'scoreCard':
       return (
