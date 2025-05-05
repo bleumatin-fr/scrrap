@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { LinearProgress } from '@mui/material';
 import {
+  Bar1D,
   Indicator,
   Indicator2Values,
   Pie1D,
@@ -28,6 +29,7 @@ import { ReactComponent as StakeHolders } from '../ui/icons/categories/stakehold
 import { ReactComponent as MachineUse } from '../ui/icons/categories/machine-use.svg';
 import { ReactComponent as Ressources } from '../ui/icons/categories/material.svg';
 import { ReactComponent as MachineMaintenance } from '../ui/icons/categories/machine-maintenance.svg';
+import Bar1DComponent from './Bar1DComponent';
 
 const Block = styled(BaseBlock)`
   background-color: var(--results-bg);
@@ -121,6 +123,15 @@ const ResultDispatch = ({ result, loading }: ResultDispatchProps) => {
           </ResultSectionWithTitleContainer>
         </ResultSection>
       );
+      case 'bar1D':
+        return (
+          <ResultSection result={result} loading={loading} height='150px'>
+            <ResultSectionWithTitleContainer>
+            <Bar1DComponent result={result} simple={true} />
+            <p className='hxb'>{result.title}</p>
+            </ResultSectionWithTitleContainer>
+          </ResultSection>
+        );
     case 'indicator2Values':
       return (
         <ResultSection result={result} loading={loading}>
@@ -161,7 +172,7 @@ const ResultSectionContainer = styled.div`
 `;
 
 interface ResultSectionProps {
-  result: Indicator | ScoreCard | Indicator2Values | Pie1D | Title;
+  result: Indicator | ScoreCard | Indicator2Values | Pie1D | Title | Bar1D;
   children: JSX.Element | JSX.Element[];
   loading: boolean;
   height?: string;
