@@ -26,6 +26,8 @@ import { ReactComponent as TransportGoods } from '../ui/icons/categories/transpo
 import { ReactComponent as Waste } from '../ui/icons/categories/waste.svg';
 import { ReactComponent as StakeHolders } from '../ui/icons/categories/stakeholders.svg';
 import { ReactComponent as MachineUse } from '../ui/icons/categories/machine-use.svg';
+import { ReactComponent as Ressources } from '../ui/icons/categories/material.svg';
+import { ReactComponent as MachineMaintenance } from '../ui/icons/categories/machine-maintenance.svg';
 
 const Block = styled(BaseBlock)`
   background-color: var(--results-bg);
@@ -185,6 +187,7 @@ export const IconContainer = styled.div`
 
 export const scopeIcons: { [key: string]: ReactElement } = {
   co2: <Co2Icon />,
+  'ressources': <Ressources />,
   'co2 évité': <Co2Icon />,
   'co2 total': <Co2Icon />,
   circularité: <SecondHand />,
@@ -197,7 +200,7 @@ export const scopeIcons: { [key: string]: ReactElement } = {
   'personnes sensibilisées': <></>,
   'consommation énergie machines':<MachineUse/>,
   'impact utilisation machines': <></>,
-  'maintenance machines': <MachineUse/>,
+  'maintenance machines': <MachineMaintenance/>,
 };
 
 const ResultSection = ({
