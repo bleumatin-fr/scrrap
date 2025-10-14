@@ -12,14 +12,17 @@ const API_URL = process.env.REACT_APP_API_URL;
 export const SpreadsheetDownloadField = ({
   className,
   emptyText,
+  source,
   ...rest
 }: UrlFieldProps) => {
   const record = useRecordContext();
 
+  const spreadsheetId = source ? record[source] : record.type;
+
   return (
     <IconButton
       variant="contained"
-      href={`${API_URL}/spreadsheets/${record.type}`}
+      href={`${API_URL}/spreadsheets/${spreadsheetId}`}
       onClick={(e) => {
         e.stopPropagation();
       }}

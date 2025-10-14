@@ -23,6 +23,7 @@ import { SpreadsheetField } from '../SpreadsheetField';
 
 import CompletionField from './CompletionField';
 import UsersField from './UsersField';
+import { SpreadsheetDownloadField } from '../SpreadsheetDownloadField';
 
 const ActionsContainer = styled.div`
   display: flex;
@@ -57,12 +58,12 @@ const projectFilters = [
     reference="users"
     source="users"
     alwaysOn
-    
+
     sort={{ field: 'firstName', order: 'ASC' }}
   >
     <AutocompleteArrayInput
       optionText={(user) => `${user.firstName} ${user.lastName} (${user.email})`.trim() || user.email}
-      sx= {{
+      sx={{
         width: "300px"
       }}
     />
@@ -105,7 +106,7 @@ const ProjectList = () => {
         {/* <DateField source="deletedAt" showTime /> */}
         {/* <TextField source="spreadsheetId" /> */}
         <ActionsContainer>
-          <SpreadsheetField source="spreadsheetId" />
+          <SpreadsheetDownloadField source="spreadsheetId" />
           <SeeProjectField source="id"></SeeProjectField>
           <EditButton></EditButton>
         </ActionsContainer>
