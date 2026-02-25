@@ -1,4 +1,4 @@
-FROM node:18.18.2 AS build
+FROM node:20.17.0 AS build
 ENV YARN_VERSION 1.22.19
 ENV NODE_ENV=development
 
@@ -13,7 +13,7 @@ RUN yarn install --frozen-lockfile
 ENV NODE_ENV=production
 RUN yarn build
 
-FROM node:18.18.2-alpine
+FROM node:20.17.0-alpine
 RUN apk upgrade libssl3 libcrypto3
 
 WORKDIR /app
