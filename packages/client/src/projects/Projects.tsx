@@ -219,16 +219,10 @@ const Projects = () => {
 
 const NoActivityText = () => {
   return (
-    <p className="h5r">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut magna a
-      augue viverra accumsan. Praesent faucibus lacinia semper. Vestibulum vel
-      risus nec erat ornare imperdiet. Phasellus sodales urna sed ligula commodo
-      ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-      aliquet, nisi ac euismod feugiat, elit nisi lacinia nisi, eget lacinia
-      velit arcu id erat. Nullam ornare condimentum neque, ut pellentesque mi
-      commodo eu. Vivamus mi felis, facilisis vel turpis nec, gravida rhoncus
-      lacus. Cras et interdum elit, non aliquam leo. Aenean eget fringilla
-      purus.
+    <p className="h5r" style={{ textAlign: 'center' }}>
+      Bienvenue sur Scrrap.<br/><br/>
+Vous n'avez pas encore créé d'activité. Elles apparaîtront ici une fois ajoutées.<br/><br/>
+Créez votre première activité pour commencer.
     </p>
   );
 };
